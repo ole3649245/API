@@ -1,15 +1,8 @@
 const express = require('express');
 
 const app = express();
-app.use(express.json());
-
-app.get('/', (req, res) => {
-  res.send('Hello Express app!')
-});
-
-app.listen(3000, () => {
-  console.log('server started');
-});
+app.use(express.json(data));
+const port = 5000;
 const data =[
   {
             "id": 7,
@@ -25,7 +18,7 @@ const data =[
             "last_name": "Ferguson",
             "avatar": "https://reqres.in/img/faces/8-image.jpg"
         },
-        {
+  {
             "id": 9,
             "email": "tobias.funke@reqres.in",
             "first_name": "Tobias",
@@ -55,5 +48,15 @@ const data =[
         }
   
     ]
+
+app.get('/data', (req, res) => {
+  res.status(300).json(data);
+});
+
+app.listen(port, () => {
+  console.log('server started');
+});
+
+        
 
   

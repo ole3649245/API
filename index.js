@@ -1,3 +1,11 @@
+<div class="page-content">
+    <img src="path/to/image.jpg" />
+</div>
+.page-content img {
+    max-width: 100%;
+    height: auto!important;
+}
+
 const express = require('express');
 
 const app = express();
